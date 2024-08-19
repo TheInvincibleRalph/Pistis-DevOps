@@ -207,12 +207,11 @@
 - **Organization/Project:** Atlassian’s use of Git for internal development and as part of their Bitbucket product.
 - **Implementation:**
   - **Adoption:** Atlassian used Git for its internal projects and offered Bitbucket as a Git hosting service, integrating it with other tools like Jira for issue tracking and Confluence for documentation.
-  - **Management:** Atlassian implemented Git with a focus on team collaboration, integrating Git with their existing suite of development and collaboration tools. [**Atlassian Blog** - Git at Atlassian](https://www.atlassian.com/git/blog)
-
+  - **Management:** Atlassian implemented Git with a focus on team collaboration, integrating Git with their existing suite of development and collaboration tools.
 
 - **Lessons Learned:**
   - **Tool Integration:** Integrating Git with other development tools (e.g., issue tracking, documentation) creates a cohesive development environment and improves team collaboration.
-  - **User Support:** Providing robust support and training resources can ease the transition to Git and ensure that teams can leverage its full potential.
+  - **User Support:** Providing robust support and training resources can ease the transition to Git and ensure that teams can leverage its full potential. [**Atlassian Blog** - Git at Atlassian](https://www.atlassian.com/git/blog)
 
 ## Emerging Trends in Source Code Management and Git's Evolution:
 
