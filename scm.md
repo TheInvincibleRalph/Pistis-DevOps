@@ -189,7 +189,7 @@
 
 - **Lessons Learned:**
   - **Ease of Use:** Providing a user-friendly interface and additional features (e.g., pull requests, code reviews) can significantly enhance Git adoption and make it easier for teams to use effectively.
-  - **Community Engagement:** Building a community around Git through integrations, open-source contributions, and educational resources can drive widespread adoption and innovation. [**GitHub Blog** - How GitHub Uses Git](https://github.blog/2020-04-15-how-github-uses-git/)
+  - **Community Engagement:** Building a community around Git through integrations, open-source contributions, and educational resources can drive widespread adoption and innovation.
 
 2. **Case Study: Google**
 
@@ -200,7 +200,7 @@
 
 - **Lessons Learned:**
   - **Custom Solutions:** Large organizations may need custom tools or integrations to address specific needs, such as managing large codebases or complex workflows.
-  - **Scalability:** Even with Git’s scalability, additional systems may be required to handle exceptionally large repositories or unique organizational requirements. [**The Register** - Google’s Migration to Git](https://www.theregister.com/2020/07/30/google_gits/)
+  - **Scalability:** Even with Git’s scalability, additional systems may be required to handle exceptionally large repositories or unique organizational requirements.
 
 3. **Case Study: Atlassian**
 
@@ -211,7 +211,7 @@
 
 - **Lessons Learned:**
   - **Tool Integration:** Integrating Git with other development tools (e.g., issue tracking, documentation) creates a cohesive development environment and improves team collaboration.
-  - **User Support:** Providing robust support and training resources can ease the transition to Git and ensure that teams can leverage its full potential. [**Atlassian Blog** - Git at Atlassian](https://www.atlassian.com/git/blog)
+  - **User Support:** Providing robust support and training resources can ease the transition to Git and ensure that teams can leverage its full potential.
 
 ## Emerging Trends in Source Code Management and Git's Evolution:
 
@@ -252,7 +252,7 @@
   - **Future Use:** Git will increasingly be used to manage IaC, with enhanced support for declarative configurations, versioning of infrastructure changes, and automated rollbacks.
 
 
-**Other References:**
+**References:**
 - [Git Documentation](https://git-scm.com/doc).
 - [Atlassian Git Tutorials](https://www.atlassian.com/git/tutorials).
 - [GitHub Guides](https://guides.github.com/).
