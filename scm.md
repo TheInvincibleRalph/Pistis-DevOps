@@ -180,7 +180,7 @@
 
 ## Git Case Studies and Industry Adoption:
 
-**1. **Case Study: GitHub**
+1. **Case Study: GitHub**
 
 - **Organization/Project:** GitHub, a leading platform for hosting and collaborating on Git repositories.
 - **Implementation:**
@@ -191,7 +191,7 @@
   - **Ease of Use:** Providing a user-friendly interface and additional features (e.g., pull requests, code reviews) can significantly enhance Git adoption and make it easier for teams to use effectively.
   - **Community Engagement:** Building a community around Git through integrations, open-source contributions, and educational resources can drive widespread adoption and innovation. [**GitHub Blog** - How GitHub Uses Git](https://github.blog/2020-04-15-how-github-uses-git/)
 
-**2. **Case Study: Google**
+2. **Case Study: Google**
 
 - **Organization/Project:** Google’s transition from Perforce to Git.
 - **Implementation:**
@@ -202,7 +202,7 @@
   - **Custom Solutions:** Large organizations may need custom tools or integrations to address specific needs, such as managing large codebases or complex workflows.
   - **Scalability:** Even with Git’s scalability, additional systems may be required to handle exceptionally large repositories or unique organizational requirements. [**The Register** - Google’s Migration to Git](https://www.theregister.com/2020/07/30/google_gits/)
 
-**3. **Case Study: Atlassian**
+3. **Case Study: Atlassian**
 
 - **Organization/Project:** Atlassian’s use of Git for internal development and as part of their Bitbucket product.
 - **Implementation:**
@@ -216,7 +216,7 @@
 
 ## Emerging Trends in Source Code Management and Git's Evolution:
 
-**1. **Emerging Trends in Source Code Management:**
+1. **Emerging Trends in Source Code Management:**
 
 - **Increased Adoption of GitOps:**
   - **Trend:** GitOps extends Git workflows to manage infrastructure and deployment processes. It uses Git repositories as the source of truth for declarative infrastructure and applications.
@@ -234,7 +234,7 @@
   - **Trend:** Development environments are increasingly diverse, with teams using multiple programming languages and technologies.
   - **Git's Evolution:** Git is evolving to support polyglot development by integrating with multi-language CI/CD pipelines and offering tools for managing dependencies and build configurations across different technologies.
 
-**2. **Impact of DevOps, CI/CD, and Automation on the Future Use of Git:**
+2. **Impact of DevOps, CI/CD, and Automation on the Future Use of Git:**
 
 - **DevOps Integration:**
   - **Impact:** DevOps practices emphasize automation, collaboration, and continuous improvement. Git is central to DevOps workflows as it integrates with various DevOps tools to streamline development, testing, and deployment processes.
