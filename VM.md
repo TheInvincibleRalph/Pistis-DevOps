@@ -199,7 +199,7 @@
 1. **Key Metrics to Track:**
    - **CPU Usage**
    - **Memory Usage**
-   - **Disk I/O(especially for I/O-intensive applications)** 
+   - **Disk I/O (especially for I/O-intensive applications)** 
    - **Network Throughput** 
    - **Uptime and Availability**
 
@@ -266,9 +266,9 @@
 
 
 ### References:
-1. [**Prometheus Documentation:**](https://prometheus.io/docs/)
-2. [**HashiCorp Terraform Documentation:**](https://www.terraform.io/docs)
-3. [**CIS Benchmarks:**](https://www.cisecurity.org/cis-benchmarks/)
-4. [**AWS Disaster Recovery:**](https://aws.amazon.com/disaster-recovery/)
-5. [**Azure Backup:**](https://learn.microsoft.com/en-us/azure/backup/)
+1. [**Prometheus Documentation**](https://prometheus.io/docs/)
+2. [**HashiCorp Terraform Documentation**](https://www.terraform.io/docs)
+3. [**CIS Benchmarks**](https://www.cisecurity.org/cis-benchmarks/)
+4. [**AWS Disaster Recovery**](https://aws.amazon.com/disaster-recovery/)
+5. [**Azure Backup**](https://learn.microsoft.com/en-us/azure/backup/)
 
