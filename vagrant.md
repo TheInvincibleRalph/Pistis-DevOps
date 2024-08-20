@@ -310,13 +310,13 @@
 
 ### References:
 
-1. **Vagrant Configuration Management Integration:** [Vagrant Provisioning](https://www.vagrantup.com/docs/provisioning)
-2. **Vagrant in CI/CD Pipelines:** [Vagrant CI/CD Integration](https://www.vagrantup.com/docs/continuous-integration)
-3. **Vagrant Networking Configuration:** [https://www.vagrantup.com/docs/networking](https://www.vagrantup.com/docs/networking)
-4. **Vagrant Multi-Machine Setup:** [https://www.vagrantup.com/docs/multi-machine](https://www.vagrantup.com/docs/multi-machine)
-5. **Creating and Sharing Vagrant Boxes:** [https://www.vagrantup.com/docs/boxes](https://www.vagrantup.com/docs/boxes)
-6. **Vagrant Official Documentation:** [https://www.vagrantup.com/docs](https://www.vagrantup.com/docs)
-7. [**VirtualBox:**](https://www.virtualbox.org/)
+1. [Vagrant Provisioning](https://www.vagrantup.com/docs/provisioning)
+2. [Vagrant CI/CD Integration](https://www.vagrantup.com/docs/continuous-integration)
+3. [Vagrant Networking Configuration](https://www.vagrantup.com/docs/networking)
+4. [Vagrant Multi-Machine Setup ](https://www.vagrantup.com/docs/multi-machine)
+5. [Creating and Sharing Vagrant Boxes](https://www.vagrantup.com/docs/boxes)
+6. [Vagrant Official Documentation](https://www.vagrantup.com/docs)
+7. [VirtualBox](https://www.virtualbox.org/)
 
 
 
