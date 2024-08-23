@@ -1053,7 +1053,7 @@ Linux provides various commands to check disk usage and availability, which are 
   - **Key Metrics Displayed:**
     - Displays the space used by each file or directory in the specified path.
 
-### Summary
+### In-a-view
 
 - **`top`** and **`htop`** are interactive tools to monitor real-time system performance, focusing on CPU, memory, and process management.
 - **`vmstat`** provides a snapshot of overall system performance, including memory, processes, and CPU utilization.
