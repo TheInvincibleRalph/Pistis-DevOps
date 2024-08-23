@@ -258,7 +258,7 @@ For example, to change the group of a file to `staff`:
 ```bash
 sudo chgrp staff filename
 ```
-
+---
 
 ### System Services and Daemons in Linux
 
@@ -522,7 +522,7 @@ Unmounting is the process of disconnecting a file system from the directory tree
 
 > *Unmounting ensures that all data is properly written to the disk and prevents data corruption. It’s important to unmount file systems before disconnecting devices or shutting down the system.*
 
-
+---
 
 ### Basic Networking Commands in Linux
 
@@ -899,6 +899,8 @@ Package managers often cache packages and metadata, which can consume disk space
 - **`yum`** was widely used in Red Hat-based systems but has been largely replaced by **`dnf`** due to `dnf`'s superior performance and dependency management.
 - **`dnf`** is the successor to `yum` and is designed for better performance, less memory usage, and more robust dependency handling.
 
+---
+
 ### Tools for Monitoring System Performance in Linux
 
 Monitoring system performance is crucial for managing Linux servers and desktop environments, ensuring that resources are used efficiently, and identifying potential bottlenecks or issues. Linux provides a range of command-line tools to monitor various aspects of system performance, such as CPU, memory, disk, and network usage. Below, we'll look at some commonly used tools and how they can be utilized.
@@ -1060,6 +1062,7 @@ Linux provides various commands to check disk usage and availability, which are 
 - **`iostat`** is used for monitoring and analyzing I/O device performance and identifying potential bottlenecks.
 - **`df`** is used to check overall disk usage and availability for mounted file systems, while **`du`** is more granular, showing disk usage for specific files and directories. 
 
+---
 
 ### Understanding SSH (Secure Shell)
 
@@ -1186,6 +1189,7 @@ To use SSH, you need to set up an SSH server on the remote machine and an SSH cl
     sudo aa-enforce /path/to/profile  # Set a profile to enforce mode
     sudo aa-complain /path/to/profile # Set a profile to complain mode
     ```
+---
 
 ### Enhancing Security with SELinux and AppArmor
 
