@@ -30,8 +30,8 @@ Options:
 
 theinvincible@TheInvincible:~$ sudo groupdel newgroup
 theinvincible@TheInvincible:~$
-
-
-
-
 ```
+
+> `-a`-- appends the user to the supplemental GROUP(S) mentioned by the -G option without removing the user from other groups.
+
+> `-d`-- creates a new home directory for the user account.
