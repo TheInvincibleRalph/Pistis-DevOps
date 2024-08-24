@@ -46,5 +46,4 @@ $
 ```
 
 > `-m`  creates the user's home directory
-> `-G`  lists of supplementary groups of the new
-account
+> `-G`  lists of supplementary groups of the new account
