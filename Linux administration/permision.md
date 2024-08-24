@@ -45,5 +45,5 @@ example.txt  exampledir
 $
 ```
 
-> `-m` -- creates the user's home directory
-> `-G` -- lists of supplementary groups of the new account
+- > `-m` -- creates the user's home directory
+- > `-G` -- lists of supplementary groups of the new account
