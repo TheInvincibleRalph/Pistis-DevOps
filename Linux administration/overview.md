@@ -1,4 +1,6 @@
-## Basic Concepts
+# Basic Concepts
+
+## Linux and its Architecture
 
 ### Key Differences Between Linux, Windows, and macOS
 
@@ -260,7 +262,7 @@ sudo chgrp staff filename
 ```
 ---
 
-### System Services and Daemons in Linux
+## System Services and Daemons in Linux
 
 #### 1. **What are System Services and Daemons?**
 
@@ -523,6 +525,8 @@ Unmounting is the process of disconnecting a file system from the directory tree
 > *Unmounting ensures that all data is properly written to the disk and prevents data corruption. It’s important to unmount file systems before disconnecting devices or shutting down the system.*
 
 ---
+
+## Networking in Linux
 
 ### Basic Networking Commands in Linux
 
@@ -900,6 +904,7 @@ Package managers often cache packages and metadata, which can consume disk space
 - **`dnf`** is the successor to `yum` and is designed for better performance, less memory usage, and more robust dependency handling.
 
 ---
+## Monitoring and Performance
 
 ### Tools for Monitoring System Performance in Linux
 
@@ -1063,6 +1068,7 @@ Linux provides various commands to check disk usage and availability, which are 
 - **`df`** is used to check overall disk usage and availability for mounted file systems, while **`du`** is more granular, showing disk usage for specific files and directories. 
 
 ---
+## Security
 
 ### Understanding SSH (Secure Shell)
 
@@ -1189,7 +1195,6 @@ To use SSH, you need to set up an SSH server on the remote machine and an SSH cl
     sudo aa-enforce /path/to/profile  # Set a profile to enforce mode
     sudo aa-complain /path/to/profile # Set a profile to complain mode
     ```
----
 
 ### Enhancing Security with SELinux and AppArmor
 
@@ -1198,6 +1203,9 @@ To use SSH, you need to set up an SSH server on the remote machine and an SSH cl
 - **Logging and Auditing:** Both SELinux and AppArmor provide detailed logging of access attempts, which is valuable for auditing and troubleshooting security issues.
 - **Defense-in-Depth:** They provide additional layers of security beyond standard user and group permissions, making it more challenging for attackers to gain unauthorized access to sensitive resources.
 
+---
+
+## Backup and Recovery
 
 ### Performing Backups in Linux
 
