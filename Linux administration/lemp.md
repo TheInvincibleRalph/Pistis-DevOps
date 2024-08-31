@@ -172,4 +172,19 @@ vagrant@vagrant:~$ sudo systemctl status nginx
              ├─12719 "nginx: worker process" "" "" "" "" "" "" "" "" "" "" >
              └─12720 "nginx: worker process" "" "" "" "" "" "" "" "" "" "" >
 
+
+vagrant@vagrant:~$ nano /var/www/localhost/info.php
+Aug 31 16:54:49 vagrant systemd[1]: Starting A high performance web server >
+Aug 31 16:54:51 vagrant systemd[1]: Started A high performance web server a>
+lines 1-17/17 (END)
+vagrant@vagrant:~$ sudo systemctl enable nginx
+Synchronizing state of nginx.service with SysV service script with /lib/systemd/systemd-sysv-install.
+Executing: /lib/systemd/systemd-sysv-install enable nginx
+vagrant@vagrant:~$ sudo ss -tuln | grep :80
+tcp   LISTEN 0      511           0.0.0.0:80         0.0.0.0:*
+vagrant@vagrant:~$ sudo ufw allow 'Nginx HTTP'
+Skipping adding existing rule
+Skipping adding existing rule (v6)
+vagrant@vagrant:~$ sudo systemctl reload nginx
+vagrant@vagrant:~$ sudo rm /var/www/localhost/info.php
 ```
