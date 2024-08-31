@@ -1,3 +1,5 @@
+# LEMP stack setup guide
+
 ```bash
 vagrant@vagrant:~$ sudo apt update
 sudo apt install nginx
@@ -171,8 +173,9 @@ vagrant@vagrant:~$ sudo systemctl status nginx
              ├─ 4532 "nginx: master process /usr/sbin/nginx -g daemon on; m>
              ├─12719 "nginx: worker process" "" "" "" "" "" "" "" "" "" "" >
              └─12720 "nginx: worker process" "" "" "" "" "" "" "" "" "" "" >
-
-
+```
+     
+```bash
 vagrant@vagrant:~$ nano /var/www/localhost/info.php
 Aug 31 16:54:49 vagrant systemd[1]: Starting A high performance web server >
 Aug 31 16:54:51 vagrant systemd[1]: Started A high performance web server a>
@@ -187,4 +190,5 @@ Skipping adding existing rule
 Skipping adding existing rule (v6)
 vagrant@vagrant:~$ sudo systemctl reload nginx
 vagrant@vagrant:~$ sudo rm /var/www/localhost/info.php
+
 ```
