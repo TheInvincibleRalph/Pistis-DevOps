@@ -1,3 +1,88 @@
+# LAMP set up guide
+
+```bash
+theinvincible@TheInvincible:/mnt/c/vagrant/pistis$ sudo apt update
+Get:1 http://security.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
+Hit:2 https://apt.releases.hashicorp.com jammy InRelease
+Hit:3 http://archive.ubuntu.com/ubuntu jammy InRelease
+Get:4 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]
+Hit:5 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Fetched 257 kB in 3s (92.1 kB/s)
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+5 packages can be upgraded. Run 'apt list --upgradable' to see them.
+theinvincible@TheInvincible:/mnt/c/vagrant/pistis$ sudo apt install apache2
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+apache2 is already the newest version (2.4.52-1ubuntu4.12).
+The following packages were automatically installed and are no longer required:
+  acl adwaita-icon-theme alsa-topology-conf alsa-ucm-conf
+  at-spi2-core attr augeas-lenses bsdmainutils btrfs-progs
+  busybox-initramfs cpu-checker db-util db5.3-util
+  dconf-gsettings-backend dconf-service debootstrap dmeventd
+  exfatprogs extlinux f2fs-tools fdisk finalrd fontconfig
+  fontconfig-config fonts-dejavu-core fonts-droid-fallback
+  fonts-lato fonts-noto-mono fonts-urw-base35 gdisk ghostscript
+  glib-networking glib-networking-common glib-networking-services
+  gsettings-desktop-schemas gstreamer1.0-plugins-bash
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 5 not upgraded.
+theinvincible@TheInvincible:/mnt/c/vagrant/pistis$ sudo ufw allow in "Apache"
+Skipping adding existing rule
+Skipping adding existing rule (v6)
+theinvincible@TheInvincible:/mnt/c/vagrant/pistis$ sudo apt install mysql-server
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+mysql-server is already the newest version (8.0.39-0ubuntu0.22.04.1).
+The following packages were automatically installed and are no longer required:
+  acl adwaita-icon-theme alsa-topology-conf alsa-ucm-conf
+  at-spi2-core attr augeas-lenses bsdmainutils btrfs-progs
+  busybox-initramfs cpu-checker db-util db5.3-util
+  dconf-gsettings-backend dconf-service debootstrap dmeventd
+  exfatprogs extlinux f2fs-tools fdisk finalrd fontconfig
+  fontconfig-config fonts-dejavu-core fonts-droid-fallback
+  fonts-lato fonts-noto-mono fonts-urw-base35 gdisk ghostscript
+  glib-networking glib-networking-common glib-networking-services
+  gsettings-desktop-schemas gstreamer1.0-plugins-base
+  gstreamer1.0-plugins-good gstreamer1.0-x gtk-update-icon-cache
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 5 not upgraded.
+theinvincible@TheInvincible:/mnt/c/vagrant/pistis$ sudo mysql
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+theinvincible@TheInvincible:/mnt/c/vagrant/pistis$ sudo mysql_secure_installation
+
+Securing the MySQL server deployment.
+
+Enter password for user root:
+Error: Access denied for user 'root'@'localhost' (using password: YES)
+theinvincible@TheInvincible:/mnt/c/vagrant/pistis$ sudo apt install php libapache2-mod-php php-mysql
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  acl adwaita-icon-theme alsa-topology-conf alsa-ucm-conf
+Setting up libapache2-mod-php (2:8.1+92ubuntu1) ...
+Setting up php (2:8.1+92ubuntu1) ...
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for php8.1-cli (8.1.2-1ubuntu2.18) ...
+Processing triggers for libapache2-mod-php8.1 (8.1.2-1ubuntu2.18) ...
+theinvincible@TheInvincible:/mnt/c/vagrant/pistis$ sudo systemctl reload apache2
+apache2.service is not active, cannot reload.
+theinvincible@TheInvincible:/mnt/c/vagrant/pistis$ sudo systemctl start apache2.service
+Job for apache2.service failed because the control process exited with error code.
+See "systemctl status apache2.service" and "journalctl -xeu apache2.service" for details.
+theinvincible@TheInvincible:/mnt/c/vagrant/pistis$ sudo systemctl start apache2
+Job for apache2.service failed because the control process exited with error code.
+See "systemctl status apache2.service" and "journalctl -xeu apache2.service" for details.
+theinvincible@TheInvincible:/mnt/c/vagrant/pistis$
+```
+
+Result:
+![php image](php.png "php")
+
 ### Troubleshooting: How I solved my blockers
 
 > Backstory: I prefer to work with linux on my Ubuntu workspace which runs directly on the Windows Subsystem for Linux environment (as opposed to using Windows CMD or Powershell) but I kept on running into a version disparity error between Windows and WSL as shown below:
