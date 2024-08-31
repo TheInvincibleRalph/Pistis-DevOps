@@ -2,6 +2,8 @@
 
 > This documentation provides a comprehensive guide on how to use the `server.sh` Bash script which has been designed to update and upgrade multiple servers, as well as install Nginx and Apache web servers on each of them.
 
+---
+
 ### Requirements
 
 Before running this script, ensure the following prerequisites are met:
@@ -28,6 +30,7 @@ Before running this script, ensure the following prerequisites are met:
    ```bash
    ./server.sh <server1> <server2>
    ```
+---
 
 ### Interpreting the Output
 
@@ -44,6 +47,8 @@ Before running this script, ensure the following prerequisites are met:
 
 - **Failure Messages**: If any operation fails, an error message will be displayed, and the script will exit with a non-zero status.
 
+---
+
 ### Simulation
 
 To run the script for three servers (`server1`, `server2`, and `server3`), execute the following command:
@@ -51,6 +56,8 @@ To run the script for three servers (`server1`, `server2`, and `server3`), execu
 ```bash
 ./server.sh server1 server2 server3
 ```
+
+---
 
 ### Troubleshooting
 
