@@ -1,4 +1,4 @@
-# LEMP stack setup guide
+# LEMP Stack Set up Guide
 
 ```bash
 vagrant@vagrant:~$ sudo apt update
@@ -174,7 +174,7 @@ vagrant@vagrant:~$ sudo systemctl status nginx
              ├─12719 "nginx: worker process" "" "" "" "" "" "" "" "" "" "" >
              └─12720 "nginx: worker process" "" "" "" "" "" "" "" "" "" "" >
 ```
-     
+
 ```bash
 vagrant@vagrant:~$ nano /var/www/localhost/info.php
 Aug 31 16:54:49 vagrant systemd[1]: Starting A high performance web server >
