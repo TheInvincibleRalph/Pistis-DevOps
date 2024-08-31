@@ -42,7 +42,7 @@ Fast forward, I eventually got my way around it (after trying out over 100 trial
    apt list -a vagrant
    ```
 
-  Here is what I got from this:
+  Here is what I got from this (poor apt):
 
 ```bash
 Listing... Done
