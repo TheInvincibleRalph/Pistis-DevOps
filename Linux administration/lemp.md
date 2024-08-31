@@ -190,5 +190,7 @@ Skipping adding existing rule
 Skipping adding existing rule (v6)
 vagrant@vagrant:~$ sudo systemctl reload nginx
 vagrant@vagrant:~$ sudo rm /var/www/localhost/info.php
-
 ```
+
+Output:
+![php image](php.png "php")
