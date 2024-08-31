@@ -1,4 +1,4 @@
-# LEMP Stack Set up Guide
+# LEMP Stack Set Up Guide
 
 ```bash
 vagrant@vagrant:~$ sudo apt update
