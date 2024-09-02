@@ -94,7 +94,7 @@ function update_server() {
     fi
 }
 ```
-This function takes the server name as an argument, connects to the server via SSH, and performs a system update and upgrade using apt-get. The `local server_name=$1` line declares a local variable server_name and assigns it the value of the first argument passed to the function ($1). Using local limits the scope of server_name to this function only. The function generally uses `sudo` (which has superuser privileges) to run the commands and `y` to automatically answer "yes" to prompts. Finally, if the `ssh` command fails, the script prints an error message.
+This function takes the server name as an argument, connects to the server via SSH, and performs a system update and upgrade using `apt-get`. The `local server_name=$1` line declares a local variable `server_name` and assigns it the value of the first argument passed to the function (`$1`). Using local limits the scope of `server_name` to this function only. The function generally uses `sudo` (which has superuser privileges) to run the commands and `y` to automatically answer "yes" to prompts. Finally, if the `ssh` command fails, the script prints an error message.
 
 
 - `install_nginx()` and `install_nginx()`:
@@ -125,7 +125,7 @@ function install_apache() {
 }
 ```
 
-The `install_nginx()` and `install_nginx()` functions look similar except for the local commands that perform the installations: `sudo apt-get install nginx -y` for nginx installation and `sudo apt-get install apache2 -y update_server()` for apache.
+The `install_nginx()` and `install_nginx()` functions look similar to the `update_server()` function except for the local commands that perform the installations: `sudo apt-get install nginx -y` for nginx installation and `sudo apt-get install apache2 -y update_server()` for apache.
 
 - `main` function:
 
