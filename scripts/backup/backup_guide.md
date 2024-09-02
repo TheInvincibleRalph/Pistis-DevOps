@@ -64,4 +64,9 @@ function backup() {
 backup
 ```
 
-- `base=$(basename "$file")`: `basename` gets the base name of the directory (`$file`). This is the name of the directory without any leading path information. If the destination already contains a directory with the same name, it prints a message indicating that the directory is being skipped to avoid overwriting data or duplication.
+- `base=$(basename "$file")`: `basename` gets the base name of the directory (`$file`). This is the name of the directory without any leading path information. If the destination already contains a directory with the same name, it prints a message indicating that the directory is being skipped to avoid overwriting data or duplication:
+
+```bash
+theinvincible@TheInvincible:~$ basename /home/theinvincible
+theinvincible
+```
