@@ -24,7 +24,7 @@ function update_server() {
 # Function to install Nginx on a specified server
 function install_nginx() {
     local server_name=$1
-   echo "Installing Apache on $server_name..."
+   echo "Installing Nginx on $server_name..."
    if ssh ubuntu@"$server_name" 'sudo apt-get install nginx -y'; then
         echo "Nginx installation complete on $server_name."
     else
