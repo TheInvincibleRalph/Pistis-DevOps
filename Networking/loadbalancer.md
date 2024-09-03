@@ -1,6 +1,6 @@
-### Troubleshooting
+## Troubleshooting
 
-Error:
+After configuring my Vagrantfile, I encountered an error:
 
 ```bash
 ==> nginx: Clearing any previously set network interfaces...
@@ -13,19 +13,19 @@ reconfigure your host only network or remove the virtual machine
 using the other host only network.
 ```
 
-#### Understanding the error:
+### Understanding the error:
 
-What is a Host-Only Network?
+**What is a Host-Only Network?**
 - A host-only network is a type of network connection that VirtualBox creates to allow communication between your host machine (the computer running VirtualBox) and virtual machines (VMs) running on VirtualBox, without allowing the VMs to directly access the wider internet.
 - Each host-only network has its own network adapter, and VirtualBox assigns IP addresses within a specific range to these adapters. A DHCP server can also be configured to assign IP addresses automatically to devices connected to this network.
 
-#### Possible causes of error:
+### Possible causes of error:
 
 - Multiple host-only networks can exist due to different Vagrant projects, manually configured setups, or leftover configurations from past VMs.
 - Conflicts occur when more than one host-only network has DHCP enabled or when their IP ranges overlap.
 - Use the VirtualBox Host Network Manager to view, adjust, or remove these host-only networks to resolve DHCP conflicts.
 
-#### How I solved the error:
+### How I solved the error:
 
 In my Vagrantfile, instead of using DHCP, I set the network configuration to a static IP replacing this:
 ```vagrantfile
