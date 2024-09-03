@@ -1,0 +1,68 @@
+### Troubleshooting
+
+Error:
+
+```bash
+==> nginx: Clearing any previously set network interfaces...
+A host only network interface you're attempting to configure via DHCP
+already has a conflicting host only adapter with DHCP enabled. The
+DHCP on this adapter is incompatible with the DHCP settings. Two
+host only network interfaces are not allowed to overlap, and each
+host only network interface can have only one DHCP server. Please
+reconfigure your host only network or remove the virtual machine
+using the other host only network.
+```
+
+Understanding the error:
+
+What is a Host-Only Network?
+- A host-only network is a type of network connection that VirtualBox creates to allow communication between your host machine (the computer running VirtualBox) and virtual machines (VMs) running on VirtualBox, without allowing the VMs to directly access the wider internet.
+- Each host-only network has its own network adapter, and VirtualBox assigns IP addresses within a specific range to these adapters. A DHCP server can also be configured to assign IP addresses automatically to devices connected to this network.
+
+Possible causes of error:
+
+- Multiple host-only networks can exist due to different Vagrant projects, manually configured setups, or leftover configurations from past VMs.
+- Conflicts occur when more than one host-only network has DHCP enabled or when their IP ranges overlap.
+- Use the VirtualBox Host Network Manager to view, adjust, or remove these host-only networks to resolve DHCP conflicts.
+
+How I solved the error:
+
+In my Vagrantfile, instead of using DHCP, I set the network configuration to a static IP replacing this:
+```vagrantfile
+config.vm.network "private_network", type: "dhcp"
+```
+
+with this:
+
+```vagrantfile
+config.vm.network "private_network", ip: "192.168.56.10"
+```
+
+
+
+
+
+
+
+
+An alternative solution would be to manage the network configuration via VirtualBox:
+
+1. **Open VirtualBox**:
+   - Launch the VirtualBox application on your host machine.
+
+2. **Access Host Network Manager**:
+   - In VirtualBox, go to the menu: `File` > `Host Network Manager`.
+   - This will show you a list of all host-only network adapters configured in VirtualBox.
+
+3. **Review Network Adapters**:
+   - Each adapter will have an associated name like `vboxnet0`, `vboxnet1`, etc.
+   - Review the IP address range and DHCP settings for each adapter.
+
+4. **Identify Conflicting DHCP Servers**:
+   - Check if multiple adapters have DHCP enabled. If so, there might be a conflict, especially if their IP ranges overlap or if Vagrant tries to use an adapter that already has a DHCP server running.
+
+5. **Resolve Conflicts**:
+   - You can either disable the DHCP server on one of the conflicting host-only networks or delete an unnecessary host-only network adapter to avoid conflicts.
+   - To disable DHCP, select the adapter and uncheck the "DHCP Server" option.
+   - To delete a network, select the adapter and click the "Remove" button.
+
