@@ -59,7 +59,7 @@ An alternative solution would be to manage the network configuration via Virtual
    - To disable DHCP, select the adapter and uncheck the "DHCP Server" option.
    - To delete a network, select the adapter and click the "Remove" button.
 
-
+> To further avoid DHCP conflicts in the Vagrant configuration, I assigned static IP addresses to all the virtual machines instead of relying on DHCP.
 
 ## Localhost compatibility
 
