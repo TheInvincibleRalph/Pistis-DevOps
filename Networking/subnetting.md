@@ -10,7 +10,7 @@
   - Operations: 80 hosts
   
 - ## **Future Growth**:  
-  - Plan for 50% growth in each department over the next 5 years.
+  - Planning for 50% growth in each department over the next 5 years.
 
 | **Department**        | **Current Hosts** | **Future Growth (50%)** | **Total Hosts Needed** |
 |-----------------------|-------------------|-------------------------|------------------------|
