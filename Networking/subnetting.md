@@ -59,41 +59,11 @@ Each subnet is documented to clearly indicate which IP ranges are assigned to ea
 
 
 
-
-
-
-
-
-
-
-#### **5. Summary for Each Department**
-
-| **Department**        | **Total Hosts Needed** | **Chosen Subnet** | **Reason**                                           |
-|-----------------------|------------------------|-------------------|------------------------------------------------------|
-| Finance               | 75                     | `/25`             | `/25` provides 126 usable IPs, sufficient for growth |
-| Human Resources       | 45                     | `/26`             | `/26` provides 62 usable IPs, enough for growth      |
-| Sales                 | 105                    | `/25`             | `/25` provides 126 usable IPs, necessary for needs   |
-| Marketing             | 60                     | `/26`             | `/26` provides 62 usable IPs, sufficient for needs   |
-| IT                    | 150                    | `/24`             | `/24` provides 254 usable IPs, needed for large scale|
-| Operations            | 120                    | `/25`             | `/25` provides 126 usable IPs, necessary for needs   |
-
-**Note**: For IT, considering its large requirement (150 hosts), a `/24` subnet is more appropriate to fully cover the need.
-
-#### **6. Final Subnet Assignments with Future Growth**
-
-Based on the total hosts required after accounting for growth, the subnet assignments ensure that each department has enough IP addresses:
-
-- **Finance**: `/25` (126 usable)
-- **Human Resources**: `/26` (62 usable)
-- **Sales**: `/25` (126 usable)
-- **Marketing**: `/26` (62 usable)
-- **IT**: `/24` (254 usable)
-- **Operations**: `/25` (126 usable)
-
-This allocation ensures:
+The allocations above ensure:
 
 - **Scalability**: Each department can grow without immediate need for IP restructuring.
 - **Efficiency**: Minimizes IP waste while providing sufficient addresses.
 - **Simplicity**: Easy to manage and document, with clear boundaries between subnets.
 
-=
+
+**Ref:** [Subnet calculator](https://www.site24x7.com/tools/ipv4-subnetcalculator.html) 
