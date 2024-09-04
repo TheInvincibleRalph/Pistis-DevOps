@@ -133,4 +133,4 @@ config.vm.provider "virtualbox" do |vb|
 end
 ```
 
-[The final Vagrantfile can be found here](https://github.com/TheInvincibleRalph/Pistis-DevOps/blob/master/Networking/Vagrantfile)
+- [The final Vagrantfile can be found here](https://github.com/TheInvincibleRalph/Pistis-DevOps/blob/master/Networking/Vagrantfile)
