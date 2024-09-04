@@ -1,5 +1,7 @@
 # Troubleshooting
 
+## Error Type: `Conflicting DHCPs Servers`
+
 After configuring my Vagrantfile, I encountered an error:
 
 ```bash
@@ -127,7 +129,7 @@ I increased the memory allocated to the VMs:
 ```ruby
 config.vm.provider "virtualbox" do |vb|
   vb.memory = "1024"  # Increase memory allocation to 1 GB
-  vb.cpus = 2         # Assign 2 CPUs
+  vb.cpus = 4         # Assign 4 CPUs
 end
 ```
 

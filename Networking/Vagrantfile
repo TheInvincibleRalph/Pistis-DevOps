@@ -1,15 +1,25 @@
 Vagrant.configure("2") do |config|
+    config.vm.boot_timeout = 600  # Increase the timeout to 10 minutes (600 seconds)
+    config.vm.provider "virtualbox" do |vb|
+    vb.gui = true
+  end
+  
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = "1024"  # Increase memory allocation to 1 GB
+    vb.cpus = 4         # Assign 4 CPUs
+  end
+  
     # Nginx Load Balancer
     config.vm.define "nginx" do |nginx|
       nginx.vm.box = "bento/ubuntu-22.04"
       nginx.vm.network "private_network", ip: "192.168.56.10"
-      nginx.vm.network "forwarded_port", guest: 80, host: 8080
+      nginx.vm.network "forwarded_port", guest: 80, host: 8000
       nginx.vm.provision "shell", path: "provision/nginx"
     end
   
     # Configuration for Web Server 1
     config.vm.define "web1" do |web1|
-      web1.vm.box = "ubuntu/bionic64"
+      web1.vm.box = "bento/ubuntu-22.04"
       web1.vm.network "private_network", ip: "192.168.56.11"
       web1.vm.provision "shell", inline: <<-SHELL
         apt-get update
@@ -20,7 +30,7 @@ Vagrant.configure("2") do |config|
   
     # Configuration for Web Server 2
     config.vm.define "web2" do |web2|
-      web2.vm.box = "ubuntu/bionic64"
+      web2.vm.box = "bento/ubuntu-22.04"
       web2.vm.network "private_network", ip: "192.168.56.12"
       web2.vm.provision "shell", inline: <<-SHELL
         apt-get update
@@ -31,7 +41,7 @@ Vagrant.configure("2") do |config|
   
     # Configuration for Web Server 3
     config.vm.define "web3" do |web3|
-      web3.vm.box = "ubuntu/bionic64"
+      web3.vm.box = "bento/ubuntu-22.04"
       web3.vm.network "private_network", ip: "192.168.56.13"
       web3.vm.provision "shell", inline: <<-SHELL
         apt-get update
