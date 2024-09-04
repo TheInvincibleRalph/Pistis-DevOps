@@ -276,4 +276,8 @@ config.vm.provider "virtualbox" do |vb|
 end
 ```
 
+## Scripts
+
 - [The final Vagrantfile can be found here](https://github.com/TheInvincibleRalph/Pistis-DevOps/blob/master/Networking/Vagrantfile)
+- Provisioning scripts:
+   - 
