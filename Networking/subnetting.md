@@ -66,4 +66,6 @@ The allocations above ensure:
 - **Simplicity**: Easy to manage and document, with clear boundaries between subnets.
 
 
-**Ref:** [Subnet calculator](https://www.site24x7.com/tools/ipv4-subnetcalculator.html) 
+**Ref:** 
+- [Subnet calculator](https://www.site24x7.com/tools/ipv4-subnetcalculator.html)
+- [CIDR calculator](https://cidr.xyz/)
