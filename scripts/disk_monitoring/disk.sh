@@ -4,7 +4,7 @@
 
 # Set the threshold value
 THRESHOLD=80
-USAGE=$(df -h / | grep '/' | awk '{print $5}' | sed 's/%//g')
+USAGE=$(df -h  | grep 'mnt/c' | awk '{print $5}' | sed 's/%//g')
 
 if [ $USAGE -gt $THRESHOLD ]; then
     echo "Disk space usage is above $THRESHOLD% on $(hostname)" | mail -s "Disk Space Alert" theinvincibledev@gmail.com
