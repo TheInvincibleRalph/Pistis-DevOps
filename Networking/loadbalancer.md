@@ -1,4 +1,4 @@
-## Troubleshooting
+# Troubleshooting
 
 After configuring my Vagrantfile, I encountered an error:
 
@@ -59,3 +59,21 @@ An alternative solution would be to manage the network configuration via Virtual
    - To disable DHCP, select the adapter and uncheck the "DHCP Server" option.
    - To delete a network, select the adapter and click the "Remove" button.
 
+
+
+## Localhost compatibility
+
+To make the loadbalancer (nginx) and the webservers accessible via localhost, I configured the Vagrantfile to forward ports from the virtual machines to my host machine. 
+
+```ruby
+Vagrant.configure("2") do |config|
+  # Nginx Load Balancer VM
+  config.vm.define "nginx" do |nginx|
+    nginx.vm.box = "ubuntu/bionic64"
+    nginx.vm.network "private_network", type: "dhcp"
+    nginx.vm.network "forwarded_port", guest: 80, host: 8080 # port forwarding
+    nginx.vm.provision "shell", path: "provision/nginx.sh"
+  end
+  ```
+
+  Forwarded Port: The `nginx.vm.network "forwarded_port", guest: 80, host: 8080` line forwards port `80` on the Nginx VM to port `8080` on my local machine.
