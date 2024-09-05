@@ -143,7 +143,7 @@ vagrant@vagrant:~$
 
 # Troubleshooting
 
-## Error Type: `Conflicting DHCPs Servers`
+## 1. Error Type: `Conflicting DHCPs Servers`
 
 After configuring my Vagrantfile, I encountered an error:
 
@@ -207,7 +207,7 @@ An alternative solution would be to manage the network configuration via Virtual
 > To further avoid DHCP conflicts in the Vagrant configuration, I assigned static IP addresses to all the virtual machines instead of relying on DHCP.
 
 ---
-## Localhost compatibility
+## 2. Localhost compatibility
 
 To make the loadbalancer (nginx) and the webservers accessible via localhost, I configured the Vagrantfile to forward ports from the virtual machines to my host machine. 
 
@@ -226,7 +226,7 @@ Vagrant.configure("2") do |config|
 
 ---
 
-## Error Type: `Timeout`
+## 3. Error Type: `Timeout`
 
   ```bash
 Timed out while waiting for the machine to boot. This means that
