@@ -275,6 +275,7 @@ config.vm.provider "virtualbox" do |vb|
   vb.cpus = 4         # Assign 4 CPUs
 end
 ```
+---
 
 ## Scripts
 
