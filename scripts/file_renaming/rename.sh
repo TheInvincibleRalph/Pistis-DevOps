@@ -10,10 +10,10 @@ prefix=$2
 for file in $dir/*; do
     if [ -f "$file" ]; then
         # Extract the file name and create a new name with the prefix and the current year
-        newfile="$prefix_(basename "$file")_$(date +%Y)"
+        newfile="${prefix}_$(basename "$file")_$(date +%Y)"
         mv "$file" "$dir/$newfile"
 
- # Check if the rename was successful and give feedback
+        # Check if the rename was successful and give feedback
         if [ $? -eq 0 ]; then
             echo "File $file renamed to $newfile successfully"
         else
