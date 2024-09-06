@@ -95,3 +95,6 @@ arr=(${MY_ARRAY[@]:-"default_value"})
 ```
 
 - If `MY_ARRAY` is not set or empty, `arr` will contain `"default_value"`.
+
+
+> Exit status variable `$?`: This is a special variable in Bash that stores the exit status of the last command executed. If the exit status is 0, it means the previous command succeeded. If it's non-zero, it indicates an error.
