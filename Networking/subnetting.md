@@ -69,3 +69,13 @@ The allocations above ensure:
 **Ref:** 
 - [Subnet calculator](https://www.site24x7.com/tools/ipv4-subnetcalculator.html)
 - [CIDR calculator](https://cidr.xyz/)
+
+
+**Task screenshot:**
+
+![CIDR](CIDR.png "CIDR")
+
+---
+
+![Subnet image](Subnet.png "Subnetting")
+
