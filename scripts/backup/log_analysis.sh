@@ -2,6 +2,12 @@
 
 LOG_FILE=$1
 
+
+if [ -z "$LOG_FILE" ]; then
+    echo "Usage: ./log_analysis.sh <log path>" # Prints a message to the user on how to use the script correctly
+    exit 1
+fi
+
 if [ ! -f "$LOG_FILE" ]; then
     echo "Log file $LOG_FILE not found!"
     exit 1
