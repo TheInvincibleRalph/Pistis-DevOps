@@ -2,6 +2,8 @@
 
 LOG_FILE=$1
 
+# Log Analysis Script
+# This script analyzes system log files for errors, warnings, and other key information
 
 if [ -z "$LOG_FILE" ]; then
     echo "Usage: ./log_analysis.sh <log path>" # Prints a message to the user on how to use the script correctly
@@ -16,6 +18,8 @@ fi
 function search_keyword() {
     local keywords=$1
     echo "Searching for '$keywords' in the logs..."
+
+    # Find and count occurrences
     count=$(grep -i "$keywords" "$LOG_FILE" | wc -l)
     echo "Found $count occurences of '$keywords'"
 
