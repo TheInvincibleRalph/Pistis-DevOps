@@ -40,7 +40,12 @@ function filter_by_date() {
     grep "$today" "LOG_FILE"
 }
 
+function summarize_by_source() {
+    echo "Summarizing logs by source..."
+    awk '{ print $5 }' "LOG_FILE" | sort | uniq -c | sort -nr | head -10
+}
 
 search_keyword "error"
 search_keyword "warning"
 filter_by_date
+summarize_by_source
