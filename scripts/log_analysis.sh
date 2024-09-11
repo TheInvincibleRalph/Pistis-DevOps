@@ -34,5 +34,13 @@ function search_keyword() {
 
 }
 
+function filter_by_date() {
+    today=$(date "+%b %_d")
+    echo "Filtering logs for today..."
+    grep "$today" "LOG_FILE"
+}
+
+
 search_keyword "error"
 search_keyword "warning"
+filter_by_date
