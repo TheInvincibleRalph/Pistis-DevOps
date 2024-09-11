@@ -15,7 +15,7 @@ if [ -z $dir ]; then
     exit 1
 fi
 
-if [ -z $(ls -A $dir) ]; then
+if [ -z "$(ls -A "$dir")" ]; then
     echo "$dir is empty or does not contain any file."
     exit 1
 fi
