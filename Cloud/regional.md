@@ -45,3 +45,7 @@ To design a solution that ensures users in India and London have an optimal brow
    - **WAF (Web Application Firewall)**: **AWS WAF** willbe used with CloudFront to protect against common web attacks like SQL injection or cross-site scripting.
    - **SSL/TLS termination**: SSL certificates  will be enabled in CloudFront and ALBs to ensure that traffic between users and the application is encrypted.
    - **IAM roles and policies**: Principle of least privilege will be followed when setting up AWS Identity and Access Management (IAM) roles and policies to secure access to your infrastructure.
+
+---
+
+![Regional Infrastructure](MinimalLatencyInfrastructure.drawio.svg "Infrastructure")
