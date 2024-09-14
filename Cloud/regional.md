@@ -4,6 +4,8 @@
 ## Task:
 > *As a senior DevOps engineer, you are tasked with designing a solution to ensure users in two different geographical locations, India and London, have a good browsing experience with minimal latency. Create an infrastructure solution that optimizes performance and minimizes latency for users in both regions. Consider factors such as content delivery networks (CDNs), edge caching, global load balancing, and region-specific deployment strategies to achieve this goal effectively. After designing the solutions (use draw.io), implement them and create the infrastructure in your AWS console.*
 
+---
+
 ## Solution:
 
 To design a solution that ensures users in India and London have an optimal browsing experience with minimal latency, here is a list of services that will be needed and the role of each service:
@@ -43,5 +45,3 @@ To design a solution that ensures users in India and London have an optimal brow
    - **WAF (Web Application Firewall)**: **AWS WAF** willbe used with CloudFront to protect against common web attacks like SQL injection or cross-site scripting.
    - **SSL/TLS termination**: SSL certificates  will be enabled in CloudFront and ALBs to ensure that traffic between users and the application is encrypted.
    - **IAM roles and policies**: Principle of least privilege will be followed when setting up AWS Identity and Access Management (IAM) roles and policies to secure access to your infrastructure.
-
----
