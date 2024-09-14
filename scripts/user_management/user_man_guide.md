@@ -85,3 +85,7 @@ Here, the script checks if the **EUID** is **not equal** (`-ne`) to `0`, meaning
 - **`echo "Invalid option"`**: Prints an error message indicating the option was invalid.
 - **`exit 1`**: Exits the script with an error code (`1` indicates failure).
 - **`;;`**: Ends this branch.
+
+
+Ref:
+- [How to Use Bash Getopts With Examples](https://kodekloud.com/blog/bash-getopts/#:~:text=Getopts%20is%20a%20powerful%20shell,scripts%20more%20readable%20and%20maintainable)
