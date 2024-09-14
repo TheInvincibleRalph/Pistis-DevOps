@@ -25,6 +25,25 @@ Here, the script checks if the **EUID** is **not equal** (`-ne`) to `0`, meaning
 
 ## Explaining the `getopts` loop:
 
+```bash
+while getopts "a:d:m:l:h" opt; do
+    case ${opt} in
+    a) user_add="$OPTARG" ;;
+    d) user_del="$OPTARG" ;;
+    m) user_mod="$OPTARG" ;;
+    l) list_user=1 ;;
+    h)
+        echo "Usage: $0 [-a username] [-d username] [-m username] [-l] [-h]"
+        exit 0
+        ;;
+    \?)
+        echo "Invalid option"
+        exit 1
+        ;;
+    esac
+done
+```
+
 ### `while getopts "a:d:m:l:h" opt; do ... done`
 
 - **`while`**: Starts a loop that will continue to run as long as `getopts` successfully parses command-line options.
