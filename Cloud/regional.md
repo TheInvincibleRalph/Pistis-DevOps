@@ -54,4 +54,8 @@ To design a solution that ensures users in India and London have an optimal brow
 
 ### Implementation
 
+**VPC Overview**
 ![VPC](VPC.png "VPC")
+
+**London region VPC**
+![Region](region.png "region")
