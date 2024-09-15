@@ -48,4 +48,6 @@ To design a solution that ensures users in India and London have an optimal brow
 
 ---
 
+### Architectural Diagram
+
 ![Regional Infrastructure](MinimalLatencyInfrastructure.drawio.svg "Infrastructure")
