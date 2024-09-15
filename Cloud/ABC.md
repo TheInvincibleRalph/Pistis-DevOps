@@ -1,4 +1,4 @@
-##Task:
+## Task:
 
 > *As a senior DevOps engineer at company ABC, analyze the existing on-premises infrastructure setup for legacy applications. Identify the challenges and shortcomings, including the single point of failure, lack of scalability, security vulnerabilities, and inefficient resource allocation. Propose a solution that addresses these issues by implementing a cloud-native architecture, separating the database from the application, migrating applications to the cloud while keeping the database on-premises, ensuring proper security measures, and eliminating single points of failure. Provide an architectural diagram illustrating the proposed solution and implement the steps in detail.*
 
