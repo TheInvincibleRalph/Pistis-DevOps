@@ -43,6 +43,8 @@
    - Implement cloud-native monitoring and logging tools (e.g., **CloudWatch**, **Datadog**, or **Prometheus**), tracking application performance, latency, and uptime.
    - Set up **automated alerts** and **self-healing mechanisms** to react to incidents in real time.
 
+---
+
 ### Architectural Diagram
 
 ![Hybrid](Hybrid.drawio.svg "Hybrid Infrastructure")
