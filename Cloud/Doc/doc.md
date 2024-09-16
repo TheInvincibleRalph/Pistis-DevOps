@@ -7,8 +7,8 @@
 
 ### NAT Gateways
 
-### **NAT Gateway Functionality:**
-A **NAT Gateway** (Network Address Translation Gateway) acts as an intermediary between instances in a **private subnet** and the internet. Its primary role is to enable outbound communication from private instances while preventing inbound connections from the internet. Here's how it operates step-by-step:
+
+A **NAT Gateway** (Network Address Translation Gateway) acts as an intermediary between instances in a **private subnet** and the internet. Its primary role is to enable outbound communication from private instances while preventing inbound connections from the internet. Here's how it operates:
 
 ---
 
