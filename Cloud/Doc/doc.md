@@ -85,3 +85,61 @@ A **NAT Gateway** (Network Address Translation Gateway) acts as an intermediary 
 ---
 
 > In short, NAT Gateway gives instances in a private subnet a *public access interface*
+
+---
+
+
+### Why is the **NAT Gateway** Placed in the Public Subnet?
+
+The **NAT Gateway** (Network Address Translation Gateway) is placed in a **public subnet** for the following reasons:
+
+1. **Need for Internet Connectivity:**
+   - A **public subnet** is a subnet that has access to the internet because its routing table includes a route to the **Internet Gateway**. Since the NAT Gateway needs to translate private IP addresses to public IP addresses for outbound internet requests, it must reside in a subnet that has direct internet access.
+   - If the NAT Gateway were placed in a **private subnet**, it wouldn't be able to communicate with the internet because private subnets do not have routes to the Internet Gateway.
+
+2. **Outbound Communication Only:**
+   - The NAT Gateway facilitates **outbound internet communication** from instances in private subnets. It does not allow unsolicited inbound traffic from the internet to reach those instances. This ensures that private instances remain secure while still being able to make outbound requests.
+   - Placing the NAT Gateway in the public subnet allows it to forward internet-bound traffic from private subnets to the outside world and relay responses back to the private instances.
+
+3. **Security Considerations:**
+   - The NAT Gateway is designed to block inbound traffic while allowing outbound traffic to pass through. Therefore, even though it is placed in a public subnet, it maintains a high level of security by not allowing incoming connections initiated from the internet. This ensures that private instances remain inaccessible from the outside.
+
+---
+
+### **Bastion Host**?
+
+A **Bastion Host** (also called a jump box) is a **secure, hardened server** that is used to provide access to instances in a **private subnet** that do not have direct internet access. 
+
+#### Key Features of a Bastion Host:
+1. **Publicly Accessible**:
+   - Unlike instances in private subnets, the bastion host is placed in a **public subnet** with an associated **public IP address**. This allows administrators or developers to connect to it from the internet, usually via **SSH (Secure Shell)** or **RDP (Remote Desktop Protocol)**.
+
+2. **Acts as a Jump Box**:
+   - The bastion host acts as an intermediary between the user and the instances in the private subnet. Once you log into the bastion host, you can **SSH or RDP** into private instances using their **private IP addresses**.
+   - This design keeps the instances in the private subnet isolated from direct public access while still allowing authorized users to manage or maintain them securely.
+
+3. **Enhanced Security**:
+   - A bastion host is typically heavily hardened:
+     - Minimal software installed to reduce attack vectors.
+     - Strict firewall rules (only allowing connections from specific IPs).
+     - Multi-factor authentication (MFA) for enhanced security.
+     - Encrypted SSH keys for access.
+   - The bastion host is **closely monitored**, and access to it is tightly controlled to minimize the risk of a security breach.
+
+4. **Purpose**:
+   - Private instances cannot have direct inbound internet access because of their placement in the private subnet. However, administrators often need to manage or debug these instances.
+   - The bastion host provides a secure, controlled gateway for these management tasks without exposing the private instances to the internet directly.
+
+#### Typical Workflow Using a Bastion Host:
+- You want to manage an instance in a private subnet.
+- First, **SSH into the bastion host**, which is publicly accessible.
+- Once inside the bastion host, use **SSH or RDP** to access the private instances. Since the bastion is inside the VPC, it can communicate directly with the private instances using their private IP addresses.
+  
+
+---
+
+### Diagram Integration:
+In the context of the reverse-proxy architecture:
+
+- **NAT Gateway** (in the public subnet) enables instances in the private subnet to make **outbound requests** to the internet.
+- **Bastion Host** (also in the public subnet) provides secure, **restricted access** to instances in the private subnet for management purposes.
