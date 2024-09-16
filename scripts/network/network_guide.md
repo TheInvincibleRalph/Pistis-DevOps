@@ -87,3 +87,140 @@ So, the loop will run three times: once for `127.0.0.1`, once for `google.com`, 
 done
 ```
 - The `fi` ends the `if` statement, and `done` marks the end of the `for` loop. Once the loop is finished, all servers have been pinged, and the results have been logged.
+
+---
+
+### Cron Automation
+
+**Cron** is a time-based job scheduler in Unix-like operating systems. It allows you to schedule tasks (called "cron jobs") to run automatically at specified intervals (e.g., every minute, hour, day, etc.). Cron is typically used to automate repetitive tasks, such as backups, monitoring, system maintenance, or running scripts (like the network monitoring script from earlier).
+
+### Key Concepts
+
+1. **Crontab**: The configuration file that contains the list of cron jobs for a particular user.
+   - You can edit your crontab using the command `crontab -e`.
+
+2. **Cron Daemon**: A background process (daemon) that runs continuously and checks crontabs for jobs to execute at the correct time.
+
+### Cron Job Syntax
+
+Each line in a crontab represents a scheduled job. The basic syntax for a cron job is:
+
+```
+* * * * * /path/to/command-or-script
+```
+
+This line contains five fields followed by the command to be executed. The five fields represent the following time intervals:
+
+| Field      | Allowed Values      | Description                              |
+|------------|---------------------|------------------------------------------|
+| Minute     | 0-59                | Minute of the hour                       |
+| Hour       | 0-23                | Hour of the day                          |
+| Day of Month | 1-31              | Day of the month                         |
+| Month      | 1-12                | Month of the year                        |
+| Day of Week | 0-7 (0 or 7 = Sunday) | Day of the week (e.g., 0 = Sunday)       |
+
+### Example Breakdown
+
+```
+*  *  *  *  *  /path/to/script.sh
+```
+This runs the script every minute.
+
+Here’s what each asterisk means:
+- **Minute**: `*` means every minute.
+- **Hour**: `*` means every hour.
+- **Day of Month**: `*` means every day of the month.
+- **Month**: `*` means every month.
+- **Day of Week**: `*` means every day of the week.
+
+So the job runs every minute of every hour, day, month, and week.
+
+### Common Cron Job Time Examples
+
+| Time Schedule                | Crontab Expression           | Description                             |
+|------------------------------|------------------------------|-----------------------------------------|
+| Every minute                  | `* * * * *`                  | Executes every minute                   |
+| Every 5 minutes               | `*/5 * * * *`                | Executes every 5 minutes                |
+| Every day at midnight         | `0 0 * * *`                  | Executes daily at 12:00 AM              |
+| Every Monday at 9 AM          | `0 9 * * 1`                  | Executes at 9:00 AM every Monday        |
+| First day of every month      | `0 0 1 * *`                  | Executes at midnight on the first of each month |
+| Every 10 minutes between 9 AM and 6 PM | `*/10 9-18 * * *`    | Executes every 10 minutes from 9 AM to 6 PM |
+
+### Setting Up a Cron Job
+
+#### 1. **Edit Your Crontab**
+To open the crontab for the current user:
+```bash
+crontab -e
+```
+This opens a text editor where you can add your cron jobs. If this is your first time using `crontab`, it might ask which editor you'd like to use.
+
+#### 2. **Add a Cron Job**
+
+For example, to run the network monitoring script every 5 minutes:
+```bash
+*/5 * * * * /path/to/./network.sh
+```
+This tells cron to run the `network.sh` script every 5 minutes. Make sure to specify the correct full path to the script.
+
+#### 3. **Save and Exit**
+
+After editing the crontab, save and close the file. Your cron job is now scheduled.
+
+### View Scheduled Cron Jobs
+
+To view the cron jobs scheduled for the current user, run:
+```bash
+crontab -l
+```
+
+This will list all the cron jobs in your crontab.
+
+### Cron Logging
+
+By default, cron logs its activity (success or failure of jobs) in `/var/log/syslog` on most Linux systems. You can check the log to see if your cron jobs ran successfully:
+```bash
+grep CRON /var/log/syslog
+```
+
+If you want to log the output of your cron jobs to a specific file, you can redirect the output to a file. For example:
+```bash
+*/5 * * * * /path/to/network_monitor.sh >> /path/to/cron.log 2>&1
+```
+- **`>> /path/to/cron.log`**: Appends the output of the script to the `cron.log` file.
+- **`2>&1`**: Redirects both standard output and standard error to the log file.
+
+### Disable a Cron Job
+To temporarily disable a cron job, you can comment it out by adding a `#` at the start of the line in the crontab:
+```bash
+#*/5 * * * * /path/to/network_monitor.sh
+```
+
+### Example Use Cases
+
+#### 1. Backup Script
+To run a backup script at 2:00 AM every day:
+```bash
+0 2 * * * /path/to/backup.sh
+```
+
+#### 2. Disk Usage Report
+To run a disk usage report every Monday at 8 AM:
+```bash
+0 8 * * 1 df -h > /path/to/disk_usage_report.log
+```
+
+### Managing Cron Jobs for Other Users
+
+If you are a system administrator and want to edit or list the cron jobs of another user, you can use the `-u` option with the `crontab` command:
+```bash
+crontab -u username -e   # Edit another user's crontab
+crontab -u username -l   # List another user's cron jobs
+```
+
+### Summary
+
+1. **Crontab**: The file where cron jobs are stored and configured.
+2. **Job scheduling**: Define tasks using a five-part time field.
+3. **Viewing/editing**: Use `crontab -l` to list jobs and `crontab -e` to edit them.
+4. **Logging**: You can view cron job logs in `/var/log/syslog`, or log the output of a cron job to a file.
