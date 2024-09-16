@@ -1,4 +1,4 @@
-# Detailed Explanation of the Network Script
+# Detailed Explanation of the Network Monitoring Script
 
 ```bash
 #!/bin/bash
