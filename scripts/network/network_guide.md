@@ -1,4 +1,4 @@
-Let's walk through the script step by step, paying particular attention to the details such as the use of `SERVERS=("127.0.0.1" "google.com" "bing.com")` and `${SERVERS[@]}`.
+# Detailed Explanation of the Network Script
 
 ```bash
 #!/bin/bash
