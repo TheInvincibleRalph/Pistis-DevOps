@@ -1,4 +1,39 @@
-# Analysis of a Reverse Proxy Infrastructure
+## Task:
+
+> *You are part of a team charged with migrating two company websites to the AWS cloud infrastructure. The first website is an e-commerce platform managing sensitive customer information, while the second website is a content management system (CMS) used for publishing articles and blogs. Both websites demand robust security protocols, scalable architecture to handle varying traffic loads, and efficient resource management to minimize costs. How can you employ reverse proxy technology within the AWS environment to meet these requirements effectively for each website while optimizing their performance and security?*
+
+---
+
+## Solution:
+
+To migrate both websites to AWS while addressing security, scalability, and cost-efficiency, we can employ **reverse proxy technology** using **Amazon Elastic Load Balancer (ELB)** and **Nginx** as key components.
+
+### 1. **E-commerce Platform (Website 1)**
+   - **Security**: 
+     - Use **AWS Application Load Balancer (ALB)** as a reverse proxy to route HTTPS traffic securely to backend instances (EC2 in private subnets). Enforce **SSL termination** at ALB to protect sensitive customer data.
+     - **AWS Web Application Firewall (WAF)** integrated with ALB to defend against threats like SQL injection and cross-site scripting (XSS).
+   - **Scalability**: 
+     - ALB automatically distributes traffic across **EC2 instances** in **Auto Scaling Groups**, ensuring dynamic scaling based on demand.
+   - **Cost-efficiency**: 
+     - Use **AWS Elastic File System (EFS)** for shared storage and **RDS** for managed databases, reducing administrative overhead.
+     - Use **NAT Gateway** for secure outbound traffic to fetch updates or external services.
+
+### 2. **CMS Platform (Website 2)**
+   - **Security**:
+     - Employ **ALB** with SSL termination for secure inbound traffic. Use **CloudFront** as a content delivery network (CDN) in front of ALB for caching and DDoS protection.
+   - **Scalability**:
+     - Use **Auto Scaling** for backend EC2 instances, scaling resources based on CMS traffic patterns.
+   - **Cost-efficiency**:
+     - Integrate **S3** for static content storage and delivery through CloudFront, minimizing compute costs.
+     - Utilize **EC2 Spot Instances** for non-critical workloads, optimizing costs.
+
+### Reverse Proxy Optimization:
+   - Both websites can use **Nginx** as a reverse proxy on EC2 instances for **caching, load balancing**, and **rate-limiting** before forwarding traffic to the backend, further optimizing performance and security while maintaining control over traffic management.
+
+
+---
+
+## Analysis of a Reverse Proxy Infrastructure
 
 ![Proxy](reverse-proxy.png "Proxy")
 
