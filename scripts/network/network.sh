@@ -12,7 +12,7 @@ LOGFILE="network.log"
 for SERVER in "${SERVERS[@]}"; do
     # Get the current date and time
     TIMESTAMP=$(date "+%Y-%m-%d %H:%M:%S")
-    
+
     # Ping the server (sending 1 packet and timeout after 5 seconds)
     if ping -c 1 -W 5 $SERVER &>/dev/null; then
         # If ping is successful, log a success message
