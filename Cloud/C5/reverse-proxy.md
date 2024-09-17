@@ -10,25 +10,25 @@ To migrate both websites to AWS while addressing security, scalability, and cost
 
 ### 1. **E-commerce Platform (Website 1)**
    - **Security**: 
-     - Use **AWS Application Load Balancer (ALB)** as a reverse proxy to route HTTPS traffic securely to backend instances (EC2 in private subnets). Enforce **SSL termination** at ALB to protect sensitive customer data.
-     - **AWS Web Application Firewall (WAF)** integrated with ALB to defend against threats like SQL injection and cross-site scripting (XSS).
+     - For a secure layer over the backend, **AWS Application Load Balancer (ALB)** will server as a reverse proxy to route HTTPS traffic securely to backend instances (EC2 in private subnets). **SSL termination** will be enforced at ALB to protect sensitive customer data.
+     - **AWS Web Application Firewall (WAF)** will be integrated with ALB to defend against threats like SQL injection and cross-site scripting (XSS).
    - **Scalability**: 
      - ALB automatically distributes traffic across **EC2 instances** in **Auto Scaling Groups**, ensuring dynamic scaling based on demand.
    - **Cost-efficiency**: 
-     - Use **AWS Elastic File System (EFS)** for shared storage and **RDS** for managed databases, reducing administrative overhead.
-     - Use **NAT Gateway** for secure outbound traffic to fetch updates or external services.
+     - **AWS Elastic File System (EFS)** will be used for shared storage and **RDS** for managed databases, thereby reducing administrative overhead.
+     - **NAT Gateway** will come in handy for secure outbound traffic to fetch updates or external services.
 
 ### 2. **CMS Platform (Website 2)**
    - **Security**:
-     - Employ **ALB** with SSL termination for secure inbound traffic. Use **CloudFront** as a content delivery network (CDN) in front of ALB for caching and DDoS protection.
+     - Like the previous website, **ALB** with SSL termination will be employed for secure inbound traffic. **CloudFront** will be used as a content delivery network (CDN) in front of ALB for caching and DDoS protection.
    - **Scalability**:
-     - Use **Auto Scaling** for backend EC2 instances, scaling resources based on CMS traffic patterns.
+     - **Auto Scaling** will be used for backend EC2 instances, scaling resources based on CMS traffic patterns.
    - **Cost-efficiency**:
-     - Integrate **S3** for static content storage and delivery through CloudFront, minimizing compute costs.
-     - Utilize **EC2 Spot Instances** for non-critical workloads, optimizing costs.
+     - **S3** will be integrated for static content storage and delivery through CloudFront, minimizing compute costs.
+     - **EC2 Spot Instances** will be utilized for non-critical workloads so as to optimize cost.
 
 ### Reverse Proxy Optimization:
-   - Both websites can use **Nginx** as a reverse proxy on EC2 instances for **caching, load balancing**, and **rate-limiting** before forwarding traffic to the backend, further optimizing performance and security while maintaining control over traffic management.
+   - Both websites will use **Nginx** as a reverse proxy on EC2 instances for **caching, load balancing**, and **rate-limiting** before forwarding traffic to the backend, further optimizing performance and security while maintaining control over traffic management.
 
 
 ---
