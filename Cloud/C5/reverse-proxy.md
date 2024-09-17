@@ -55,7 +55,7 @@ This AWS architecture diagram shows a multi-tier setup designed to ensure securi
 ---
 
 ### **3. NAT Gateways:**
-- `The **NAT Gateway** in each public subnet allows instances in private subnets to access the internet (e.g., for software updates) without exposing them to incoming public traffic. This is an important security mechanism.`
+- *The **NAT Gateway** in each public subnet allows instances in private subnets to access the internet (e.g., for software updates) without exposing them to incoming public traffic. This is an important security mechanism.*
 
 ---
 
