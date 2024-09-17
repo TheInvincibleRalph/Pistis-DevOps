@@ -143,3 +143,39 @@ In the context of the reverse-proxy architecture:
 
 - **NAT Gateway** (in the public subnet) enables instances in the private subnet to make **outbound requests** to the internet.
 - **Bastion Host** (also in the public subnet) provides secure, **restricted access** to instances in the private subnet for management purposes.
+
+---
+
+### Difference Between **CloudFront** and **Route 53**:
+
+1. **CloudFront**:
+   - **Type**: Content Delivery Network (CDN).
+   - **Function**: Distributes content (web pages, images, videos, etc.) to users based on their geographic location. It caches content in **edge locations** around the world to reduce latency and improve website performance.
+   - **Use Case**: Used to accelerate content delivery and enhance performance by serving cached versions of static/dynamic content from edge servers near users.
+   - **Example**: CloudFront can cache static assets like images, CSS files, and JavaScript for a website, ensuring faster load times globally.
+
+2. **Route 53**:
+   - **Type**: Domain Name System (DNS) service.
+   - **Function**: Translates domain names (e.g., www.example.com) into IP addresses that computers use to connect to servers. It also provides routing based on factors like **geolocation**, **latency**, or **health checks**.
+   - **Use Case**: Used for DNS management, domain registration, and traffic routing to applications deployed across different regions or AWS services.
+   - **Example**: Route 53 resolves www.myecommerce.com to the public IP address of your website’s load balancer or server.
+
+### Summary of Differences:
+- **CloudFront**: Optimizes and accelerates **content delivery**.
+- **Route 53**: Handles **DNS resolution** and traffic routing.
+
+---
+
+### What is **SSL Termination**?
+
+**SSL termination** refers to the process where the **encryption** of an HTTPS connection is decrypted at a specific point in the network, usually at a **load balancer** or **reverse proxy**, before being passed to the backend servers.
+
+#### Key Points:
+1. **Encryption**: When users access a website via HTTPS, their data is encrypted with SSL/TLS to protect it from eavesdropping or tampering.
+2. **Termination Point**: SSL termination occurs when the incoming encrypted traffic is **decrypted** at a **load balancer** (e.g., AWS Application Load Balancer) or **reverse proxy** (e.g., Nginx). From this point, the traffic can be forwarded to backend servers in plaintext (over HTTP).
+3. **Security & Performance**:
+   - **Security**: By terminating SSL at a single point (load balancer), you ensure that traffic between users and the server remains encrypted while simplifying certificate management.
+   - **Performance**: Offloading the SSL decryption task from the backend servers reduces their processing load, improving performance.
+
+#### Example:
+In AWS, an **Application Load Balancer** (ALB) can handle SSL termination. When a user makes an HTTPS request, ALB decrypts the request and forwards it to EC2 instances over HTTP within the secure AWS network, avoiding the overhead of encryption on each backend server.
