@@ -38,4 +38,8 @@ elseecho "File transfer failed!"
 exit 1
 fi
 
+# Optional: Remove local backup files older than 7 days
+echo "Cleaning up old backups..."
+find $BACKUP_DIR -type f -name "$DB_NAME-*.sql" -mtime +7 -exec rm {} \;
+
 echo "Database backup and transfer complete!"
