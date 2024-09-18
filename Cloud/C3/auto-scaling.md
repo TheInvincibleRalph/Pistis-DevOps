@@ -84,7 +84,7 @@
      ```
    - Click **Create Launch Template**.
 
-![Auto-scaling](auto-scale.png "Auto-scaling")
+![Auto-scaling](auto-scaling.png "Auto-scaling")
 
 #### **Step 6: Set Up Auto Scaling**
 1. **Create an Auto Scaling Group**:
