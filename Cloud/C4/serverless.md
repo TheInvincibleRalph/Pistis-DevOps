@@ -48,7 +48,7 @@ AWS Lambda is suitable for serverless applications. For this, we will deploy the
   2. Click "Create Distribution."
   3. Set the **S3 bucket** as the origin, and customize the cache settings for optimal performance.
   
-## Deployment on AWS Elastic Beanstalk**
+## Deployment on AWS Elastic Beanstalk
 
 AWS Elastic Beanstalk is a Platform-as-a-Service (PaaS) that can deploy web applications in environments like Node.js, Python, PHP, etc.
 
