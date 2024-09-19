@@ -1,5 +1,10 @@
 # DEPLOYMENT ANALYSIS
 
+**Task:**
+
+> You are part of a team tasked with modernizing the infrastructure for a small e-commerce startup. The company currently hosts its website on a traditional web server but is exploring more efficient and scalable alternatives using cloud services. As a DevOps engineer, you have been assigned to evaluate AWS Lambda and Elastic Beanstalk as potential hosting solutions for the company's website. Your goal is to deploy the existing website onto both AWS Lambda and Elastic Beanstalk, analyze their performance, scalability, and cost implications, and provide recommendations to the management team based on your findings.
+
+
 ## Deployment on AWS Lambda
 
 ### **1. Obtain a Static Website Template**
