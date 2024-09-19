@@ -1,4 +1,4 @@
-# DEPLOYMENT ANALYSIS: Deploying a Static Website on AWS Lambda and AWS Elastic Beanstalk
+# DEPLOYMENT ANALYSIS
 
 ## Deployment on AWS Lambda
 
@@ -48,7 +48,8 @@ AWS Lambda is suitable for serverless applications. For this, we will deploy the
   2. Click "Create Distribution."
   3. Set the **S3 bucket** as the origin, and customize the cache settings for optimal performance.
   
-### **5. Deploy the Website on AWS Elastic Beanstalk**
+## Deployment on AWS Elastic Beanstalk**
+
 AWS Elastic Beanstalk is a Platform-as-a-Service (PaaS) that can deploy web applications in environments like Node.js, Python, PHP, etc.
 
 #### **Step 1: Set Up Elastic Beanstalk**
