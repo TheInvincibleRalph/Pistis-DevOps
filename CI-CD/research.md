@@ -1,7 +1,5 @@
 # Research Project on CI/CD
 
----
-
 ### **Overview of CI/CD Best Practices**
 
 **Fundamental Principles of CI/CD:**
