@@ -49,6 +49,7 @@ notify_admin() {
 
 # Main script logic
 renew_certificates
+deploy_certificates
 notify_admin
 
 # Exit script
