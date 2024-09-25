@@ -37,3 +37,19 @@ deploy_certificates() {
         echo "$(date): Failed to reload $WEB_SERVER!" | tee -a "$LOG_FILE"
     fi
 }
+
+
+# Optional: Send a notification or email on success/failure
+notify_admin() {
+    # You can send an email, Slack notification, etc. upon success or failure
+    # This is just a placeholder example
+    echo "$(date): SSL renewal completed for $DOMAIN. Check logs for details." | tee -a "$LOG_FILE"
+    # You can use mail, curl, or other notification tools here
+}
+
+# Main script logic
+renew_certificates
+notify_admin
+
+# Exit script
+exit 0
