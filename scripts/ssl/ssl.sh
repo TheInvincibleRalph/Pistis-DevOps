@@ -16,6 +16,7 @@ LOG_FILE="/var/log/cert_renewal.log"
 renew_certificate() {
     echo "$(date): Checking for SSL certificate renewal..." | tee -a "$LOG_FILE"
 
+    # Renew the certificates using Certbot (will only renew if it's due for renewal)
     certbot renew --quiet --no-self-upgrade --post-hook "systemctl reload $WEB_SERVER" 2>> "$LOG_FILE"
 
     if [[ $? -eq 0]]; then
