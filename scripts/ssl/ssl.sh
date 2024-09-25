@@ -23,3 +23,17 @@ renew_certificate() {
         echo "$(date): Certbot failed to renew certificates!" | tee -a "$LOG_FILE"
     fi
 }
+
+# Function to deploy the renewed certificates (reload the web server)
+deploy_certificates() {
+    echo "$(date): Deploying new SSL certificates and reloading $WEB_SERVER..." | tee -a "$LOG_FILE"
+
+    # Reload the web server to use the new certificates
+    systemctl reload "$WEB_SERVER"
+
+    if [[ $? -eq 0 ]]; then
+        echo "$(date): $WEB_SERVER successfully reloaded with the new certificates." | tee -a "$LOG_FILE"
+    else
+        echo "$(date): Failed to reload $WEB_SERVER!" | tee -a "$LOG_FILE"
+    fi
+}
