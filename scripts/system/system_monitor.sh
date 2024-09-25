@@ -1,6 +1,10 @@
 #!/bin/bash
 
-# Thressholds
+# This script monitors system resources such as CPU, Memory, Disk and Network usage
+# and sends an alert if any of the resources exceed the threshold values.
+
+
+# Thresholds
 CPU-THRESHOLD=80
 MEMORY_THRESHOLD=80
 DISK_THRESHOLD=80
