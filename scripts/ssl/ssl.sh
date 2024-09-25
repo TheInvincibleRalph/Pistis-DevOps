@@ -12,6 +12,7 @@ WEB_SERVER="nginx"
 # Log file for renewal process
 LOG_FILE="/var/log/cert_renewal.log"
 
+# Function to check if renewal is needed and renew the SSL certificate using Certbot
 renew_certificate() {
     echo "$(date): Checking for SSL certificate renewal..." | tee -a "$LOG_FILE"
 
