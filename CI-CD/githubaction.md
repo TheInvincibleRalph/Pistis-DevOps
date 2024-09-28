@@ -5,7 +5,7 @@
 - Go to GitHub and create a new repository.
 - Initialize the repository with a README.md file.
 - Clone the repository to your local machine:
-- git clone https://github.com/your-username/your-repo-name.git
+- `git clone https://github.com/your-username/your-repo-name.git`
 - cd your-repo-name
 
 
