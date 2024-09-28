@@ -11,7 +11,7 @@
 
 ## Step 2: Create a Workflow Directory
 - Create a directory for your GitHub Actions workflows:
-- mkdir -p .github/workflows
+- `mkdir -p .github/workflows`
 
 
 ## Step 3: Create a Simple Workflow
@@ -47,9 +47,9 @@ jobs:
 ```
 
 Commit and push the workflow file to your repository:
-- git add .github/workflows/main.yml
-- git commit -m "Add initial GitHub Actions workflow"
-- git push origin main
+- `git add .github/workflows/main.yml`
+- `git commit -m "Add initial GitHub Actions workflow"`
+- `git push origin main`
 
 ![Window](window.png "Window")
 
@@ -102,9 +102,9 @@ jobs:
 
 Commit and push the changes to your repository:
 
-- git add .github/workflows/main.yml
-- git commit -m "Add lint job to GitHub Actions workflow"
-- git push origin main
+- `git add .github/workflows/main.yml`
+- `git commit -m "Add lint job to GitHub Actions workflow"`
+- `git push origin main`
 
 ## Step 6: Use Secrets in Your Workflow
 Go to the "Settings" tab in your GitHub repository.
@@ -143,9 +143,9 @@ jobs:
       run: echo ${{ secrets.MY_SECRET }}
 ```
 Commit and push the changes to your repository:
-- git add .github/workflows/main.yml
-- git commit -m "Use secret in GitHub Actions workflow"
-- git push origin main
+- `git add .github/workflows/main.yml`
+- `git commit -m "Use secret in GitHub Actions workflow"`
+- `git push origin main`
 
 ![Workflow](workflow.png "Workflow")
 
