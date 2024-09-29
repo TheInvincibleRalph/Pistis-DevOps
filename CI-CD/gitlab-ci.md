@@ -182,4 +182,4 @@ test_job:
 Commit and push the changes to your repository using the VSCode Git interface.
 
 
-### (Source code)[https://gitlab.com/TheInvincibleRalph/gitlab_demo]
+### [Source code](https://gitlab.com/TheInvincibleRalph/gitlab_demo)
