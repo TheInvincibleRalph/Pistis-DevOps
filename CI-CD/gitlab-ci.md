@@ -181,5 +181,6 @@ test_job:
 
 Commit and push the changes to your repository using the VSCode Git interface.
 
+![Jobs](gitlab.png "Jobs")
 
 ### [Source code](https://gitlab.com/TheInvincibleRalph/gitlab_demo)
