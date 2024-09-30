@@ -40,6 +40,15 @@ ufw allow OPENSSH # Allow SSH traffic
 ufw allow 80/tcp # Allow HTTP traffic
 ufw allow 443/tcp # Allow HTTPS traffic
 
+# Enable the firewall
+ufw --force enable
+echo "UFW firewall is now active."
+
+# Enable fail2ban to protect against brute-force attacks
+echo "Configuring Fail2ban..."
+systemctl enable fail2ban
+systemctl start fail2ban
+
 # Creating new user
 echo "Off to creating a user..."
 useradd -m -s /bin/bash "$NEW_USER"
@@ -52,3 +61,17 @@ usermod -aG sudo "$NEW_USER"
 # Securing SSH: Disable root login
 echo "Securing SSH..."
 sed -i 's/^PermitRootLogin.*/PermitRootLogin no/' "$SSHD_CONFIG"
+
+# Restart SSH service to apply changes
+systemctl restart ssh
+echo "SSH has been secured."
+
+# Print system info after configuration
+echo "Configuration completed successfully!"
+echo "Server information:"
+echo "Hostname: $(hostname)"
+echo "IP Address: $(hostname -I | awk '{print $1}')"
+echo "New user: $NEW_USER"
+echo "SSH is now configured, root login disabled."
+
+exit 0
