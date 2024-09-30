@@ -8,6 +8,7 @@
 # It also setup firewall and enable protection against brute-force attacks
 # Finally, it prints out system info after configuration
 
+# Check that the Effective User ID is zero otherwise restrict run priviledge
 if [ "$EUID" -ne 0 ]; then
     echo "This script should be run as root or using sudo"
     exit 1
