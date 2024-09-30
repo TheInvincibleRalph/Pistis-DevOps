@@ -8,15 +8,20 @@
 # It also setup firewall and enable protection against brute-force attacks
 # Finally, it prints out system info after configuration
 
+if [ "$EUID" -ne 0 ]; then
+    echo "This script should be run as root or using sudo"
+    exit 1
+fi
+
 PACKAGES=(
-    "ufw" # Firewall
-    "fail2ban" # Security tool to ban IPs with too many failed login attempts
-    "htop" # System resource monitor
-    "vim"   # Text editor
-    "nano"  # Text editor
-    "curl"  # Command-line tool for transferring data
+    "ufw"       # Firewall
+    "fail2ban"  # Security tool to ban IPs with too many failed login attempts
+    "htop"      # System resource monitor
+    "vim"       # Text editor
+    "nano"      # Text editor
+    "curl"      # Command-line tool for transferring data
     "net-tools" # Networking tools
-    "git" # Version control system
+    "git"       # Version control system
 )
 
 NEW_USER="TheInvincible"
@@ -37,7 +42,7 @@ echo "Configuring firewall..."
 ufw default deny incoming
 ufw default allow outgoing
 ufw allow OPENSSH # Allow SSH traffic
-ufw allow 80/tcp # Allow HTTP traffic
+ufw allow 80/tcp  # Allow HTTP traffic
 ufw allow 443/tcp # Allow HTTPS traffic
 
 # Enable the firewall
