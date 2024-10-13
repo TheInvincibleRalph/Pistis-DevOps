@@ -13,6 +13,7 @@
 - Integrate GitHub Actions with AWS credentials securely to perform the deployment tasks.
 - Implement error handling and notifications in the GitHub Actions workflows to alert on deployment failures.
 
+---
 
 ### Setting up GitHub reposirory
 
@@ -25,6 +26,7 @@ git branch -M master
 git remote add origin https://github.com/TheInvincibleRalph/Ansible-practice.git
 git push -u origin master
 ```
+---
 
 ### GitHub Action Configuration
 
@@ -73,6 +75,8 @@ AWS credentials are securely stored using GitHub Secrets which can be configured
 
 > Go to the repository’s *"Settings" -> "Secrets" -> "Actions" -> "New Repository Secret"*.
 Then add secrets for `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`.
+
+---
 
 ### Ansible Playbook
 
