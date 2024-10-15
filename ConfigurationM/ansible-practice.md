@@ -23,7 +23,7 @@ git init
 git add README.md
 git commit -m "first commit"
 git branch -M master
-git remote add origin https://github.com/TheInvincibleRalph/Ansible-practice.git
+git remote add origin https://github.com/TheInvincibleRalph/Ansible-project.git
 git push -u origin master
 ```
 ---
@@ -33,62 +33,42 @@ git push -u origin master
 ```yml
 # .github/workflows/deploy.yml
 
-name: Ansible AWS Deployment
+name: Deploy Ansible Playbooks
 
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v3
 
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.x'
+          python-version: '3.8'
 
       - name: Install Ansible
         run: |
           python -m pip install --upgrade pip
-          pip install ansible boto boto3
+          pip install ansible
 
-      - name: Set up AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-west-2
-
-      - name: Run Ansible Playbook
+      - name: Run Ansible Playbook on two localhost ports
         run: |
-          ansible-playbook -i localhost, playbook.yml
+          ansible-playbook ./playbook.yml -i inventory.ini --become
 ```
-
-- **GitHub Secrets for AWS Credentials**
-AWS credentials are securely stored using GitHub Secrets which can be configured following these steps:
-
-> Go to the repository’s *"Settings" -> "Secrets" -> "Actions" -> "New Repository Secret"*.
-Then add secrets for `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`.
-
 ---
 
 ### Ansible Playbook
 
 **Repository structure:**
 ```git
-ansible-practice/
+ansible-project/
 ├── roles/
-│   ├── ec2/
-│   │   ├── tasks/
-│   │   │   └── main.yml
-│   │   └── defaults/
-│   │       └── main.yml
 │   ├── efs/
 │   │   ├── tasks/
 │   │   │   └── main.yml
@@ -100,4 +80,6 @@ ansible-practice/
 │       │   └── main.yml
 ```
 
-[Source code](https://github.com/TheInvincibleRalph/Ansible-practice)
+![Workflow](job.png "job workflow")
+
+[Source code](https://github.com/TheInvincibleRalph/Ansible-project)
