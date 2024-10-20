@@ -80,6 +80,6 @@ ansible-project/
 │       │   └── main.yml
 ```
 
-![Workflow](job.png "job workflow")
+![Workflow](job.png "Job Workflow")
 
 [Source code](https://github.com/TheInvincibleRalph/Ansible-project)
